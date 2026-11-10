@@ -14,15 +14,15 @@ This repository holds the source code, notebooks, and submissions for my individ
 
 Ranks recorded on 9 November 2026. 110 valid Codabench submissions in total (excluding failed and starter runs).
 
-| Phase | Task | Primary metric | Best score | Rank | Finished subs. |
-|---|---|---|---|---|---|
-| 1 | Legal LM pretraining | BERTScore F1 | **0.8279** | 103 | 8 |
-| 2 | Legal NER | Strict Macro-F1 | **0.5547** | 43 | 25 |
-| 3 | Rhetorical role prediction | Macro-F1 | **0.4742** | 84 | 40 |
-| 4 | Court judgment prediction | Macro-F1 | **0.6915** | 83 | 25 |
-| 5 | Legal statute identification | Macro-F1 | not attempted | n/a | 0 |
-| 6 | Abstractive summarization | BERTScore F1 | **0.8186** | 117 | 6 |
-| 7 | Prior case retrieval | Micro-F1@7 | **0.2416** | 120 | 6 |
+| Phase | Task | Primary metric | Best score 
+|---|---|---|---|
+| 1 | Legal LM pretraining | BERTScore F1 | **0.8279** 
+| 2 | Legal NER | Strict Macro-F1 | **0.5547** 
+| 3 | Rhetorical role prediction | Macro-F1 | **0.4742** 
+| 4 | Court judgment prediction | Macro-F1 | **0.6915** 
+| 5 | Legal statute identification | Macro-F1 | not attempted 
+| 6 | Abstractive summarization | BERTScore F1 | **0.8186** 
+| 7 | Prior case retrieval | Micro-F1@7 | **0.2416** 
 
 
 ---
@@ -260,12 +260,7 @@ Phases 2-4 use 100 warmup steps, weight decay 0.01, head LR 1e-3; Phase 6 uses 5
 
 ---
 
-## 14. LLM usage
-LLMs used: Claude and ChatGPT. Used for explaining methods (e.g. LoRMA, retention), brainstorming ideas, debugging notebook/file-path errors, plotting code, drafting factual sections of the report, and **writing the core training/inference code for Phases 2, 3, 4, 6 and 7**.
-
----
-
-## 15. References
+## 14. References
 1. Joshi et al., *IL-TUR: Benchmark for Indian Legal Text Understanding and Reasoning*, ACL 2024.
 2. Zhang et al., *BERTScore*, ICLR 2020.
 3. Bihany, Patel, Modi, *LoRMA: Low-Rank Multiplicative Adaptation for LLMs*, arXiv:2506.07621.
