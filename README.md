@@ -240,18 +240,7 @@ Phases 2-4 use 100 warmup steps, weight decay 0.01, head LR 1e-3; Phase 6 uses 5
 
 ---
 
-## 12. Local evaluation vs Codabench
-
-Local and Codabench numbers differ wherever both exist, so local scores should be treated cautiously:
-- Phase 1: local BERTScore 0.857-0.861 (different scorer) vs Codabench 0.8279.
-- Phase 2: out-of-fold ensemble 0.5358 vs 0.5547 on test folds.
-- Phase 4: partial FT 0.593 dev vs 0.6915 test; AdaLoRA 0.654 dev vs about 0.59-0.63 test.
-
-Local checks did catch two real bugs: the Phase 1 prompt-truncation bug and the Phase 4 NaN runs.
-
----
-
-## 13. Limitations and future work
+## 12. Limitations and future work
 - Pretraining used only about 4% of the available 4.5B tokens (184M for the decoder).
 - Hyperparameters were not systematically tuned; each architecture got limited runs.
 - Phase 5 missing; Phases 6 and 7 decoder-only.
@@ -262,21 +251,21 @@ Local checks did catch two real bugs: the Phase 1 prompt-truncation bug and the 
 
 ---
 
-## 14. Reproducibility notes
-- Platform: Kaggle notebooks, 2x T4, fp16.
+## 13. Reproducibility notes
+- Platform: Kaggle notebooks, 2x T4.
 - Data: load `Exploration-Lab/CS-781-Capstone` from Hugging Face (phase configs `phase_1` ... `phase_7`). Only official data was used.
 - Run order: Phase 1 notebooks first (tokenizer, then each architecture), then save the checkpoints; every later phase loads those Phase 1 weights.
-- Submission format: `prediction.json` at the root of `submission.zip` (see the competition document for per-phase schema).
+- Submission format: `prediction.json` at the root of `submission.zip`.
 - Seeds and exact notebook filenames are as stored in each phase folder.
 
 ---
 
-## 15. LLM usage declaration (summary)
+## 14. LLM usage
 LLMs used: Claude and ChatGPT. Used for explaining methods (e.g. LoRMA, retention), brainstorming ideas, debugging notebook/file-path errors, plotting code, drafting factual sections of the report, and **writing the core training/inference code for Phases 2, 3, 4, 6 and 7**.
 
 ---
 
-## 16. References
+## 15. References
 1. Joshi et al., *IL-TUR: Benchmark for Indian Legal Text Understanding and Reasoning*, ACL 2024.
 2. Zhang et al., *BERTScore*, ICLR 2020.
 3. Bihany, Patel, Modi, *LoRMA: Low-Rank Multiplicative Adaptation for LLMs*, arXiv:2506.07621.
